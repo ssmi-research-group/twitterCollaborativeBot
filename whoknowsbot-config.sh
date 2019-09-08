@@ -14,5 +14,5 @@ else
 	sudo apt-get install python3-pip
 
 	echo "Iniciando instalação das dependências do projeto..."
-	sudo python3.6 -m pip install python-twitter nltk wordcloud backoff
+	sudo python3 -m pip install setuptools python-twitter nltk wordcloud backoff
 fi
