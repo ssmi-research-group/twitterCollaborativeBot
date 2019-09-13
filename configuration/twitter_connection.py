@@ -1,10 +1,11 @@
 import twitter
 from twitter import error
+from .credentials import * 
 
-consumerKey = ''
-consumerSecret = ''
-accessToken = ''
-accessTokenSecret = ''
+consumerKey = CKEY
+consumerSecret = CSCRT
+accessToken = ACCTOKN
+accessTokenSecret = ACCTOKNSCRT
 
 
 def open_connection():
