@@ -30,4 +30,7 @@ else
 	echo "Iniciando instalação do backoff..."
 	sudo python3 -m pip install backoff
 
+	echo "Iniciando instalação do matplotlib..."
+	sudo python3 -m pip install matplotlib
+
 fi

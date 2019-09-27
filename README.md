@@ -58,6 +58,7 @@ Ao executar o script acima, as seguintes dependências serão instaladas:
     4. nltk
     5. wordcloud
     6. backoff
+    7. matplotlib
 
 No Ubuntu 18.04 a instalação manual pode ser feita executando o comando:
 
