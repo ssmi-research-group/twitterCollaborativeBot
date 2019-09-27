@@ -2,7 +2,7 @@ import re
 import time
 from datetime import datetime
 
-from utils import file_utility, twitter_utility
+from utils import file_utility, twitter_utility, preprocessing_utility
 from whoknowsbot.core import how_many_knows, most_used_terms, who_knows
 from whoknowsbot.twitter.reply import reply
 
@@ -16,19 +16,7 @@ def listener(api):
 
         # reversed is used to dispatch mentions in the order they are tweeted.
         for mention in reversed(new_mentions):
-            tweet_text = mention.text
-            tweet_text_redundant_spaces_removed = re.sub(' +', ' ', tweet_text)
-            tweet_text_splitted = tweet_text_redundant_spaces_removed.split(
-                " ")
-
-            term = "twitter"
-            operation = None
-
-            if len(tweet_text_splitted) >= 3:
-                term = tweet_text_splitted[2]
-
-            if len(tweet_text_splitted) >= 2:
-                operation = tweet_text_splitted[1].upper()
+            (operation, term) = preprocessing_utility.tweetPreprocessing(mention.text)
 
             user_id = mention.user.id
             user_name = mention.user.screen_name
