@@ -6,7 +6,7 @@ def tweet_treatment (tweet_text):
     VALID_OPERATIONS = ['QUEMSABE', 'QUANTOSSABEM', 'SOBREOQUESABEM']
     treated_tweet_text = ''
     operation = None
-    term = 'twitter'
+    term = '#twitter'
 
     # recupera e remove do tweet original a conta do robô
     bot_account =  re.findall(r'@\w+', tweet_text)[0]
@@ -26,7 +26,7 @@ def tweet_treatment (tweet_text):
         if opr in tweet_text_punctuation_removed:
             operation = opr
             tweet_term = tweet_text_punctuation_removed.replace(opr, '')
-            term = '#' + tweet_term.lower() if len(tweet_term) > 0 else 'twitter'
+            term = '#' + tweet_term.lower() if len(tweet_term) > 0 else '#twitter'
 
             # adiciona ao tweet tratado a operação e o termo extraídos
             treated_tweet_text += operation + ' ' + term
