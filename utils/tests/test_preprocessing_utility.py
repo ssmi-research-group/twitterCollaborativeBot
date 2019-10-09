@@ -19,3 +19,6 @@ class test_preprocessing_utility(unittest.TestCase):
 
     def test_tweet_treatment_with_spaced_term(self):
         self.assertEqual(tweet_treatment('@WhoKnowsBot QuAntOsSaBEM lucas rotsen pereira'), '@WhoKnowsBot QUANTOSSABEM #lucasrotsenpereira')
+
+    def test_tweet_treatment_without_space_between_operation_and_term(self):
+        self.assertEqual(tweet_treatment('@WhoKnowsBot QuAntOsSaBEMlucasrotsenpereira'), '@WhoKnowsBot QUANTOSSABEM #lucasrotsenpereira')
